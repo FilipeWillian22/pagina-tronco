@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <style>
+        body{
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFb1nEU2OXnZ61106bL6E2ZMx1Dl_cX4kCTg&usqp=CAU');
+            font-size: 20px;
+                background-size: cover;
+        }
+        h1 {
+            text-align: center;
+            color: aliceblue;
+        }
+        h2 {
+            text-align: center;
+        }
+        .destaque {
+            color: yellow;
+        }
+        ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border-radius: 1px solid yellow;
+    }
+    li {
+        display: inline-block;
+        margin-right: 1px;
+        position: relative;
+    }
+    li a {
+        text-decoration: none;
+        color: #fffb0a;
+        padding: 10px 20px;
+        background-color: #133f01;
+        border: 1px solid yellow;
+        border-radius: 1px;
+    
+    }
+    li:hover ul {
+        display: block;
+        border-radius: 1px solid yellow;
+    
+    }
+    ul ul { 
+        display: none;
+        position: absolute;
+        top: 100%;
+        border-radius: 1px solid yellow;
+
+    }
+    ul ul li {
+        width: 200px;
+        padding: 10px;
+        text-align: left;
+        border-radius: 1px solid yellow;
+    }
+    .contacts-dropdown {
+        cursor: pointer;
+        text-decoration: none;
+        color: #fffb0a;
+        padding: 10px 30px;
+        border-radius: 1px solid yellow;
+    }
+    .contacts-dropdown:hover a {
+        text-decoration: none;
+        color: #fffb0a;
+        padding: 10px 20px;
+        background: color 114900px;
+        border-radius: 1px solid yellow;
+        text-align: justify;
+    }
+    iframe {
+        margin-top: 10px;
+        width: calc(100% - 10px);
+    
+    }
+    button {
+    text-decoration: none;
+    color: #fffb0a;
+    padding: 10px 20px;
+    background-color: #114900;
+    border: 1px solid yellow;
+    border-radius: 5px; 
+  }
+   .input-container {
+    text-align: center;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    .no-border-button {
+    border: none; 
+    padding: 0; 
+    text-decoration: none; 
+    color: #fffb0a; 
+    cursor: pointer; 
+}
+.caixa {
+    text-align: center;
+    display: inline-block;
+    border: 1px solid yellow;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 auto
+}
+
+#resultado {
+    text-align: center;
+    font-size: 25px;
+    color: #fffb0a;
+    position: absolute;
+    top: 55%;
+    right: 500px;
+    transform: (0, -50%);
+  }
+#Classificação{
+    text-align: center;
+    font-size: 25px;
+    color: #fffb0a;
+    position: absolute;
+    top: 60%;
+    right: 500px;
+    transform: (0, -50%);
+  }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li class="contacts-dropdown no-border">
+            <a href="#">Home</a>
+                <ul>
+                    <li><a href="paginatronco2.html">Página inicial</a></li>
+                </ul>
+            </li>
+            <li class="contacts-dropdown no-border">
+                <a href="#">Calculadora de notas</a>
+                <ul>
+                    <li><a href="calculonota.html">Calcular notas</a></li>
+                </ul>
+            </li>
+            <li class="contacts-dropdown no-border">
+                <a href="#">Verificar IMC</a>
+                <ul>
+                    <li><a href="imc.html">Calcular IMC</a></li>
+                </ul>
+            </li>
+            <li class="contacts-dropdown no-border">
+                <a href="#">Calculadora de Salário</a>
+                <ul>
+                    <li><a href="calsuladorasalario.html">Calcular aumento</a></li>
+                </ul>
+            </li>
+        </ul>
+    <h1><span class="destaque">Sistema de calculo de notas</span></h1>
+    <h2>Bem vindo à calculadora de notas </h2>
+    <h3>Este projeto tem como objetivo calcuar a media dos alunos descritos de acordo com a nota adicionada</h3>
+    
+    <div class="caixa">
+    <p>Insira a Primeira nota : <input type="number" id="nota1"></p>
+      <p>Insira a Segunda nota: <input type="Number" id="nota2" ></p> 
+         <p>Insira a Terceira nota: <input type="Number" id="nota3" ></p> 
+   
+   <button onclick="calculanota()">Calcular media</button>
+   </div>
+   
+   <p id="resultado"></p>
+   <p id="Classificação"></p>
+
+<script src="ramos.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <header>
+        <h1><span class="destaque">Losa pessoal</span></h1>
+    </header>
+<head>
+<style>
+    body {
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFb1nEU2OXnZ61106bL6E2ZMx1Dl_cX4kCTg&usqp=CAU');
+        font-size: 20px;
+        background-size: cover;
+        margin: 0; 
+        padding: 0; 
+    }
+    h1, p { 
+        color: ghostwhite;
+        text-align: center;
+    }
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;
+        text-align: end;
+        background-color: rgba(0, 0, 0, 0.5); 
+        padding: 10px; 
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        display: inline-block;
+        margin-right: 20px;
+        position: relative;
+    }
+    li a {
+        text-decoration: none;
+        color: #fffb0a;
+        padding: 10px 20px 10px 20px;
+        background-color: #133f01;
+        border: 1px solid #eeff00;
+        border-radius: 5px;
+    }
+    li:hover {
+        border: 1px solid #134101;
+    }
+    li:hover ul {
+        display: block;
+    }
+    ul ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        background-color: #134101;
+    }
+    ul ul {
+        border: 1px solid #e0f808;
+    }
+    ul ul li {
+        width: 200px;
+        padding: 10px;
+        text-align: left;
+    }
+    .contacts-dropdown {
+        cursor: pointer;
+        text-decoration: none;
+        color: #fffb0a;
+        padding: 10px 30px;
+        background-color: #133f01;
+        border: 1px solid #eeff00;
+        border-radius: 5px;
+    }
+    .contacts-dropdown:hover a {
+        text-decoration: none;
+        color: #fffb0a;
+        padding: 10px 20px;
+        background-color: #114900;
+        border: 1px solid #eeff00;
+        border-radius: 5px;
+        text-align: justify;
+    }
+    iframe {
+        margin-top: 10px;
+        width: calc(100% - 10px);
+        border: 0px;
+    }
+    button {
+        text-decoration: none;
+        color: #fffb0a;
+        padding: 10px 20px;
+        background-color: #114900;
+        border: 1px solid #eeff00;
+        border-radius: 0px;
+        text-align: justify;
+    }
+  
+.no-border-button {
+    border: none; 
+    padding: 0; 
+    text-decoration: none; 
+    color: #fffb0a; 
+    cursor: pointer; 
+}
+
+</style>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Losa pessoal</title>
+</head>
+<body>  
+    
+    <p1> Bem vindo(a) a sua Losa Pessoal, a página ideal para seu dia a dia</p1>
+    <br>
+    </br>
+    <ul>
+        <li><a href="#">Sobre</a></li>
+        <li class="contacts-dropdown no-border">Verificador de Idade
+            <ul>
+                <button class="no-border-button">
+                    <a href="verificadordeidade.html">Verificar Idade</a>
+                </button>
+            </ul>
+        </li>
+        <li class="contacts-dropdown no-border">Calculadora de notas
+            <ul>
+                <button class="no-border-button">
+                    <a href="calculonota.html">Calcular notas</a>
+                </button>
+            </ul>
+        </li>
+        <li class="contacts-dropdown no-border">Verificar IMC
+            <ul>
+                <button class="no-border-button">
+                    <a href="imc.html">Calcular IMC</a>
+                </button>
+            </ul>
+        </li>
+        <li class="contacts-dropdown no-border">Calculadora de Salário
+            <ul>
+                <button class="no-border-button">
+                    <a href="calsuladorasalario.html">Calcular aumento salarial</a>
+                </button>
+            </ul>
+        </li>
+    </ul>
+   
+        
+        <footer><strong><u>Autor Filipe Willian - Estudante de programação- curso: entra21</u></strong></footer>  
+</body>
+</html>
