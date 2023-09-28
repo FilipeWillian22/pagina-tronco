@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Ordenados</title>
+</head>
+<body>
+    <h1>Ordenador de Números</h1>
+    <p>Insira um número qualquer: <input type="number" id="numeroInput" onblur="inserirNumero()"></p>
+    <button type="button" onclick="inserirNumero()">Inserir nÚmero</button>
+
+    <h2>Números digitados</h2>
+    <ul id="numerosDigitados"></ul>
+
+    <button onclick="ordenarNumeros()">Ordenar Números</button>
+
+    <h2>Números na forma ordenada crescente</h2>
+    <ul id="numerosOrdenados"></ul>
+
+    <script>
+        var numeros = [];
+
+        function inserirNumero() {
+            var numero = parseFloat(document.getElementById("numeroInput").value);
+
+            if (!isNaN(numero)) {
+                numeros.push(numero);
+                document.getElementById("numeroInput").value = '';
+
+                var numerosDigitados = document.getElementById('numerosDigitados');
+                var li = document.createElement('li');
+                li.textContent = numero;
+                numerosDigitados.appendChild(li);
+                numeroinput.focus();
+
+            }
+        }
+
+        function ordenarNumeros() {
+            var numerosOrdenados = numeros.slice().sort((a, b) => a - b);
+            var numerosOrdenadosList = document.getElementById('numerosOrdenados');
+
+        
+            while (numerosOrdenadosList.firstChild) {
+                numerosOrdenadosList.removeChild(numerosOrdenadosList.firstChild);
+            }
+
+            
+            numerosOrdenados.forEach(numero => {
+                var li = document.createElement('li');
+                li.textContent = numero;
+                numerosOrdenadosList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Element Object</h1>
+<h2>The focus() and blur() Methods</h2>
+
+<input type="text" id="myText" value="A text field">
+
+<p>Click the buttons to give or remove focus from the text field.</p>
+
+<button type="button" onclick="getFocus()">Get focus</button>
+<button type="button" onclick="loseFocus()">Lose focus</button>
+
+<script>
+function getFocus() {
+  document.getElementById("myText").focus();
+}
+
+function loseFocus() {
+  document.getElementById("myText").blur();
+}
+</script>
+
+</body>
+</html>-->

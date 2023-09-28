@@ -68,7 +68,7 @@ function calculanota(){
 var nota1 = parseFloat(document.getElementById("nota1").value);
 var nota2 = parseFloat(document.getElementById("nota2").value);
 var nota3 = parseFloat(document.getElementById("nota3").value);
-
+var frequencia = parseFloat(document.getElementById("frequencia").value);
 if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)|| nota1 < 0 || nota2 < 0 || nota3 < 0 || nota1 > 10 || nota2 > 10|| nota3 > 10) {
     alert("Por favor, insira um valor entre 0 e 10");
     return;
@@ -76,12 +76,110 @@ if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)|| nota1 < 0 || nota2 < 0 || not
 
 var media = (nota1 + nota2 + nota3) / 3;
 
-var resultado = document.getElementById("resultado");
-resultado.innerHTML = "a media do alune é: " +  media.toFixed(2);
 
-if (media => 7.0) {
-    media.innerHTML = "Aluno Aprovdo ";
-} else {
-    media.innerHTML = "Aluno Reprovado.";
- }
+var resultado = document.getElementById("resultado");
+resultado.innerHTML = "A média do aluno é: " + media.toFixed(2) + '<br>';
+
+if (media >= 7.0 && frequencia >= 70) {
+    resultado.innerHTML += "Aluno Aprovado";
+  } else {
+    resultado.innerHTML += "Aluno Reprovado";
+    if (frequencia < 70) {
+      resultado.innerHTML += " por frequência insuficiente";
+    }
+  }
 }
+
+function calcularSalario() {///criei a função para calcular o salário
+    var cargo = document.getElementById("cargo").value; // variavel cargo conforme a id
+    var salario = parseFloat(document.getElementById("salario").value); // variavel salario conforme a id sendo transformada em float
+
+    if (isNaN(salario)) { // criei uma mensagem de alerta caso em salario não seja inserido um valor numerico válido
+        alert("Por favor, informe um valor válido para o salário.");
+        return;
+    }
+
+    var aumento;
+// - primeiro descobre--se o cargo, para encontrar o total que aumentou 
+    if (cargo == "Gerente") {
+        aumento = salario * 0.05;
+    } else if (cargo == "Supervisor") {
+        aumento = salario * 0.08;
+    } else if (cargo == "Operador") {
+        aumento = salario * 0.09;
+    } else {
+        aumento = salario * 0.1;
+    }
+// soma do sálario atual com o valor que aumentou descoberto anteriormente 
+    var novoSalario =  salario + aumento;
+
+    resultado1 = document.getElementById("Resultado"); //apresentação de resultado de aumento 
+    aumento1 = document.getElementById("Aumento");
+    novoSalario1 = document.getElementById("NovoSalario");
+
+    resultado1.innerHTML = "Salário atual: R$" + salario.toFixed(2);
+    aumento1.innerHTML = "Aumento: R$" + aumento.toFixed(2);
+    novoSalario1.innerHTML = "Novo salário: R$" + novoSalario.toFixed(2);
+}
+
+
+/* static void exercicio2(){
+    System.out.println("1-Gerente");
+    System.out.println("2-Supervisor");
+    System.out.println("3-Operador");
+    System.out.println("4-Outros");
+    
+    int opcao = new Scanner(System.in).nextInt();
+    if(opcao == 1) {
+        //calculo para gerente
+    }else if(opcao == 2) {
+        //calculo para supervisor
+    }else if(opcao == 3) {
+        //calculo operador
+    }else if(opcao == 4) {
+        //calculo demais colaboradores
+    }else {
+        System.out.println("Opção inválida");
+    }
+}
+
+
+   
+
+
+
+     
+
+     static void useSwitchex2() {
+        	
+        	String cargo = JOptionPane.showInputDialog(null,"Cargo do funcionário: Gerente|| Supervisor|| Operador|| Outros");
+        	System.out.println(cargo);
+        	
+        
+        	String salarioInput = JOptionPane.showInputDialog(null,"Digite o salário atual do funcionario");
+            double salarioAtual = Double.parseDouble(salarioInput);
+        	
+        	double aumento = 0.0;
+        	switch (cargo) {
+        	case "Gerente":
+        		aumento = salarioAtual * 0.05;
+        		break;
+        	case "Supervisor":
+        		aumento = salarioAtual * 0.08;
+        		break;
+        	case "Operador":
+        		aumento = salarioAtual * 0.09;
+        		break;
+        	case "Outros":
+        		aumento = salarioAtual *0.1;
+        		break;
+        	}
+    
+	}
+}*/
+
+
+
+
+
+

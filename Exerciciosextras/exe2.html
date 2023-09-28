@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Ordenados</title>
+</head>
+<body>
+
+    <!--) A partir do exercício 1, crie um recurso que permita ao usuário:
+    a) informar um numero e mostrar em que posição do array ele se encontra;
+    b) informar a ordem que  deseja visualizar os dados: crescente, decrescente, ou na ordem que foi inserida;
+    c) informar um numero e remover do array;
+    d) informar um numero e substituir seu valor no array.-->
+    <h1>Ordenador de Números</h1>
+    <p>Insira um número qualquer: <input type="number" id="numeroInput" onblur="inserirNumero()"></p>
+    <button type="button" onclick="inserirNumero()">Inserir nÚmero</button>
+
+    <h2>Números digitados</h2>
+    <ul id="numerosDigitados"></ul>
+
+    <button onclick="ordenarNumeros()">Ordenar Números</button>
+
+    <h2>Números na forma ordenada crescente</h2>
+    <ul id="numerosOrdenados"></ul>
+
+    <script>
+        var numeros = [];
+
+        function inserirNumero() {
+            var numero = parseFloat(document.getElementById("numeroInput").value);
+
+            if (!isNaN(numero)) {
+                numeros.push(numero);
+                document.getElementById("numeroInput").value = '';
+
+                var numerosDigitados = document.getElementById('numerosDigitados');
+                var li = document.createElement('li');
+                li.textContent = numero;
+                numerosDigitados.appendChild(li);
+                numeroinput.focus();
+
+            }
+        }
+
+        function ordenarNumeros() {
+            var numerosOrdenados = numeros.slice().sort((a, b) => a - b);
+            var numerosOrdenadosList = document.getElementById('numerosOrdenados');
+
+        
+            while (numerosOrdenadosList.firstChild) {
+                numerosOrdenadosList.removeChild(numerosOrdenadosList.firstChild);
+            }
+
+            
+            numerosOrdenados.forEach(numero => {
+                var li = document.createElement('li');
+                li.textContent = numero;
+                numerosOrdenadosList.appendChild(li);
+            });
+        }
+        
+    </script>
+</body>
+</html> 

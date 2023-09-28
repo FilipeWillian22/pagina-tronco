@@ -74,6 +74,26 @@
         width: calc(100% - 10px);
     
     }
+    .contacts-dropdown.sobre ul {
+    background-color: black; 
+    color: #fffb0a;
+    border-radius: 5px; 
+    padding: 10px; 
+    } 
+
+    .contacts-dropdown.sobre ul li {
+    padding: 5px 0; 
+   }
+
+
+    .contacts-dropdown.sobre ul li a {
+    color: #fffb0a;
+    text-decoration: none;
+    }
+
+  .contacts-dropdown.sobre ul li a:hover {
+    background-color: #333; 
+}
     button {
     text-decoration: none;
     color: #fffb0a;
@@ -111,7 +131,7 @@
     color: #fffb0a;
     position: absolute;
     top: 55%;
-    right: 500px;
+    right: 300px;
     transform: (0, -50%);
   }
 #Classificação{
@@ -123,6 +143,15 @@
     right: 500px;
     transform: (0, -50%);
   }
+  footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;
+        background-color: rgba(0, 0, 0, 0.5); 
+        padding: 10px; 
+        color: rgb(19, 130, 226);
+    }
     </style>
 <head>
     <meta charset="UTF-8">
@@ -139,12 +168,6 @@
                 </ul>
             </li>
             <li class="contacts-dropdown no-border">
-                <a href="#">Calculadora de notas</a>
-                <ul>
-                    <li><a href="calculonota.html">Calcular notas</a></li>
-                </ul>
-            </li>
-            <li class="contacts-dropdown no-border">
                 <a href="#">Verificar IMC</a>
                 <ul>
                     <li><a href="imc.html">Calcular IMC</a></li>
@@ -156,6 +179,14 @@
                     <li><a href="calsuladorasalario.html">Calcular aumento</a></li>
                 </ul>
             </li>
+            <li class="contacts-dropdown sobre no-border">
+                <a href="#">Sobre</a>
+                <ul>
+                    <li>Faça uma página que leia três notas de um aluno e calcule sua média.</li> 
+                    <li>O usuário deve poder inserir a frequência do aluno.</li> 
+                    <li>Calcule a situação do aluno baseado na média e na frequência.</li>
+                </ul>
+            </li>
         </ul>
     <h1><span class="destaque">Sistema de calculo de notas</span></h1>
     <h2>Bem vindo à calculadora de notas </h2>
@@ -165,6 +196,7 @@
     <p>Insira a Primeira nota : <input type="number" id="nota1"></p>
       <p>Insira a Segunda nota: <input type="Number" id="nota2" ></p> 
          <p>Insira a Terceira nota: <input type="Number" id="nota3" ></p> 
+         <p>Insira a frequencia do aluno:(%) <input type="number" id="frequencia"></p>
    
    <button onclick="calculanota()">Calcular media</button>
    </div>
@@ -173,6 +205,6 @@
    <p id="Classificação"></p>
 
 <script src="ramos.js"></script>
-    
+<footer><strong><u>Autor Filipe Willian - Estudante de programação- curso: entra21</u></strong></footer> 
 </body>
 </html>

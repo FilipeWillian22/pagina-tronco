@@ -6,6 +6,166 @@
             font-size: 20px;
                 background-size: cover;
         }
+        h1 {
+            text-align: center;
+            color: aliceblue;
+        }
+        h2 {
+            text-align: center;
+        }
+        .destaque {
+            color: yellow;
+        }
+        ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border-radius: 1px solid yellow;
+    }
+    li {
+        display: inline-block;
+        margin-right: 1px;
+        position: relative;
+    }
+    li a {
+        text-decoration: none;
+        color: #fffb0a;
+        padding: 10px 20px;
+        background-color: #133f01;
+        border: 1px solid yellow;
+        border-radius: 1px;
+    
+    }
+    li:hover ul {
+        display: block;
+        border-radius: 1px solid yellow;
+    
+    }
+    ul ul { 
+        display: none;
+        position: absolute;
+        top: 100%;
+        border-radius: 1px solid yellow;
+
+    }
+    ul ul li {
+        width: 200px;
+        padding: 10px;
+        text-align: left;
+        border-radius: 1px solid yellow;
+    }
+    .contacts-dropdown {
+        cursor: pointer;
+        text-decoration: none;
+        color: #fffb0a;
+        padding: 10px 30px;
+        border-radius: 1px solid yellow;
+    }
+    .contacts-dropdown:hover a {
+        text-decoration: none;
+        color: #fffb0a;
+        padding: 10px 20px;
+        background: color 114900px;
+        border-radius: 1px solid yellow;
+        text-align: justify;
+    }
+    iframe {
+        margin-top: 10px;
+        width: calc(100% - 10px);
+    
+    }
+    button {
+    text-decoration: none;
+    color: #fffb0a;
+    padding: 10px 20px;
+    background-color: #114900;
+    border: 1px solid yellow;
+    border-radius: 5px; 
+  }
+   .input-container {
+    text-align: center;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    .no-border-button {
+    border: none; 
+    padding: 0; 
+    text-decoration: none; 
+    color: #fffb0a; 
+    cursor: pointer; 
+}
+.caixa {
+    text-align: center;
+    display: inline-block;
+    border: 1px solid yellow;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 auto
+}
+
+#Resultado {
+    text-align: center;
+    font-size: 25px;
+    color: #fffb0a;
+    position: absolute;
+    top: 45%;
+    right: 500px;
+    transform: translateY(-50%); 
+}
+
+#Aumento {
+    text-align: center;
+    font-size: 25px;
+    color: #fffb0a;
+    position: absolute;
+    top: 50%; 
+    right: 500px;
+    transform: translateY(-50%); 
+}
+
+#NovoSalario {
+    text-align: center;
+    font-size: 25px;
+    color: #fffb0a;
+    position: absolute;
+    top: 55%; 
+    right: 500px;
+    transform: translateY(-50%); 
+}
+
+.contacts-dropdown.sobre ul {
+    background-color: black; 
+    color: #fffb0a;
+    border-radius: 5px; 
+    padding: 10px; 
+}
+
+.contacts-dropdown.sobre ul li {
+    padding: 5px 0; 
+}
+
+
+.contacts-dropdown.sobre ul li a {
+    color: #fffb0a;
+    text-decoration: none;
+}
+
+.contacts-dropdown.sobre ul li a:hover {
+    background-color: #333; 
+}
+footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;
+        background-color: rgba(0, 0, 0, 0.5); 
+        padding: 10px; 
+        color: rgb(19, 130, 226);
+    }
+
+
     </style>
 <head>
     <meta charset="UTF-8">
@@ -13,6 +173,53 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="menu">
+        <ul>
+            <li class="contacts-dropdown no-border">
+            <a href="#">Home</a>
+                <ul>
+                    <li><a href="paginatronco2.html">Página inicial</a></li>
+                </ul>
+            </li>
+            <li class="contacts-dropdown no-border">
+                <a href="#">Calculadora de notas</a>
+                <ul>
+                    <li><a href="calculonota.html">Calcular notas</a></li>
+                </ul>
+            </li>
+            <li class="contacts-dropdown no-border">
+                <a href="#">Verificar IMC</a>
+                <ul>
+                    <li><a href="imc.html">Calcular IMC</a></li>
+                </ul>
+            </li>
+            <li class="contacts-dropdown sobre no-border">
+                <a href="#">Sobre</a>
+                <ul>
+                    <li>Uma empresa resolveu conceder aumento para seus funcionários. Para tal, ela se baseou no cargo do funcionário para conceder o aumento.</li>
+                    <li>O Gerente recebe um aumento de 5%, Supervisores 8%, operadores 9% e demais colaboradores recebem 10%.</li>
+                    <li>A página deve permitir informar o cargo e o salário de cada funcionário e mostrar o salário atual, qual foi o aumento e qual o valor do novo salário.</li>
+                </ul>
+            </li>
+            
+        </ul>
+    <h1><span class="destaque">Sistema de calculo de notas</span></h1>
+    <h2>Bem vindo à calculadora de Salários </h2>
+    <h3>Este projeto tem como objetivo cálcuar o valor de aumento salarial de funcionários de uma empresa</h3>
     
+    <div class="caixa">
+    <p>Informe seu cargo : <input type="text" id="cargo" placeholder="cargo"></p>
+      <p>Informe seu salário atual(R$): <input type="Number" id="salario" placeholder ="salário"></p> 
+    
+   <button onclick="calcularSalario()">Cálcular Salário</button>
+   </div>
+   <div id = "Aumento"></div>
+   <div id = "Resultado"></div>
+   <div id = "NovoSalario"></div>
+
+   
+   <script src="ramos.js"></script>
+    
+   <footer><strong><u>Autor Filipe Willian - Estudante de programação- curso: entra21</u></strong></footer> 
 </body>
 </html>

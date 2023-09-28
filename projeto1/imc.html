@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <style>
-        body {
+    body {
             background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFb1nEU2OXnZ61106bL6E2ZMx1Dl_cX4kCTg&usqp=CAU');
             font-size: 20px;
             background-size: cover;
             margin: 0;
             padding: 0;
-        }
-        h1 {
+    }
+    h1 {
             text-align: center;
             color: aliceblue;
         }
-        h2 {
+    h2 {
             text-align: center;
         }
-        .destaque {
+    .destaque {
             color: yellow;
         }
-        ul {
+    
+     ul {
         list-style-type: none;
         padding: 0;
         margin: 0;
         border-radius: 1px solid yellow;
     }
-    li {
+
+     li {
         display: inline-block;
         margin-right: 1px;
         position: relative;
     }
-    li a {
+     li a {
         text-decoration: none;
         color: #fffb0a;
         padding: 10px 20px;
@@ -41,7 +43,6 @@
     li:hover ul {
         display: block;
         border-radius: 1px solid yellow;
-    
     }
     ul ul { 
         display: none;
@@ -76,6 +77,26 @@
         width: calc(100% - 10px);
     
     }
+    .contacts-dropdown.sobre ul {
+    background-color: black; 
+    color: #fffb0a;
+    border-radius: 5px; 
+    padding: 10px; 
+    } 
+
+    .contacts-dropdown.sobre ul li {
+    padding: 5px 0; 
+   }
+
+
+    .contacts-dropdown.sobre ul li a {
+    color: #fffb0a;
+    text-decoration: none;
+    }
+
+  .contacts-dropdown.sobre ul li a:hover {
+    background-color: #333; 
+}
     button {
     text-decoration: none;
     color: #fffb0a;
@@ -125,6 +146,15 @@
     right: 500px;
     transform: (0, -50%);
   }
+  footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;
+        background-color: rgba(0, 0, 0, 0.5); 
+        padding: 10px; 
+        color: rgb(19, 130, 226);
+    }
     </style>
 <head>
     <meta charset="UTF-8">
@@ -147,15 +177,16 @@
                 </ul>
             </li>
             <li class="contacts-dropdown no-border">
-                <a href="#">Verificar IMC</a>
-                <ul>
-                    <li><a href="imc.html">Calcular IMC</a></li>
-                </ul>
-            </li>
-            <li class="contacts-dropdown no-border">
                 <a href="#">Calculadora de Salário</a>
                 <ul>
                     <li><a href="calsuladorasalario.html">Calcular aumento</a></li>
+                </ul>
+            </li>
+            <li class="contacts-dropdown sobre no-border">
+                <a href="#">Sobre</a>
+                <ul>
+                    <li> Faça um página para calcular o IMC. Basear na tabela da pagina https://www.calculoimc.com.br.</li>
+                    
                 </ul>
             </li>
         </ul>
@@ -177,5 +208,7 @@
 
     <script src="ramos.js"></script>
     
+
+    <footer><strong><u>Autor Filipe Willian - Estudante de programação- curso: entra21</u></strong></footer> 
 </body>
 </html>

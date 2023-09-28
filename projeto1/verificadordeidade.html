@@ -80,6 +80,26 @@
         width: calc(100% - 10px);
     
     }
+    .contacts-dropdown.sobre ul {
+    background-color: black; 
+    color: #fffb0a;
+    border-radius: 5px; 
+    padding: 10px; 
+    } 
+
+    .contacts-dropdown.sobre ul li {
+    padding: 5px 0; 
+   }
+
+
+    .contacts-dropdown.sobre ul li a {
+    color: #fffb0a;
+    text-decoration: none;
+    }
+
+  .contacts-dropdown.sobre ul li a:hover {
+    background-color: #333; 
+}
     button {
     text-decoration: none;
     color: #fffb0a;
@@ -122,6 +142,15 @@
     font-size: 50px;
     color: red;
 }
+footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;
+        background-color: rgba(0, 0, 0, 0.5); 
+        padding: 10px; 
+        color: rgb(19, 130, 226);
+    }
     </style>
 </head>
 <br>
@@ -152,6 +181,14 @@
                     <li><a href="calsuladorasalario.html">Calcular aumento</a></li>
                 </ul>
             </li>
+            <li class="contacts-dropdown sobre no-border">
+                <a href="#">Sobre</a>
+                <ul>
+                    <li>Criar uma página que leia a idade de uma pessoa e informe se ela é maior ou menor de idade.</li> 
+                     <li>Para ser maior a pessoa precisa ter no mínimo 18 anos;.</li>
+                    
+                </ul>
+            </li>
         </ul>
     </div>
 
@@ -166,6 +203,7 @@
     <p id="resultado"></p>
 
     <script src="ramos.js"></script>
+    <footer><strong><u>Autor Filipe Willian - Estudante de programação- curso: entra21</u></strong></footer> 
 </body>
 </html>
  
