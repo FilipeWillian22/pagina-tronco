@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url('https://png.pngtree.com/element_our/md/20180709/md_5b436b4fc3621.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        p {
+            color: rgb(5, 4, 4);
+            font-family: 'rock';
+            text-align: center;
+            font-size: 25px;
+        }
+
+        ul {
+            border: 2px solid rgb(0, 0, 0);
+            padding: 10px;
+            background-color: transparent;
+            display: inline-block;
+        }
+
+        li {
+            color: rgb(0, 0, 0); 
+            font-family: 'rock';
+            
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="thanos..ico" type="image/x-icon">
+    <title>Cesta de Frutas</title>
+</head>
+<body>
+    <div>
+        <p><span><strong>Cesta de frutas</strong></span></p>
+        <button onclick="insiraFruta()">Inserir uma fruta</button>
+        <button id="resetButton" type="button">Resetar</button>
+        <br>
+        <input type="text" id="fruta" onkeydown="inserirComEnter(event)">
+        <br>
+        <ul id="listaFrutas" class="listaFrutas"></ul>
+    </div>
+
+    <script>
+        var frutas = [];
+
+        function insiraFruta() {
+            var inputFruta = document.getElementById("fruta");
+            var novaFruta = inputFruta.value;
+
+            if (novaFruta.trim() !== "") {
+                frutas.push(novaFruta);
+                inputFruta.value = "";
+                carregarListaFrutas();
+            }
+        }
+
+        function inserirComEnter(event) {
+            if (event.key === "Enter") {
+                insiraFruta();
+            }
+        }
+
+        function carregarListaFrutas() {
+            var listaFrutas = document.getElementById("listaFrutas");
+            listaFrutas.innerHTML = "";
+
+            for (var i = 0; i < frutas.length; i++) {
+                var itemLista = document.createElement("li");
+                itemLista.textContent = frutas[i];
+                listaFrutas.appendChild(itemLista);
+            }
+        }
+
+        var resetButton = document.getElementById("resetButton");
+        resetButton.addEventListener("click", function() {
+            frutas = []; 
+            carregarListaFrutas(); 
+            document.getElementById("fruta").value = ""; 
+        });
+    </script>
+</body>
+</html>
+

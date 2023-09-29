@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="alien.ico" type="image/x-icon">
+    <title>EXEERCISE</title>
+    <style>
+         body{
+            background-color: black;
+         }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #imagem {
+            width: 200x;
+            height: 200px;
+        }
+
+        button {
+            width: 200x;
+        }
+        h1{
+            text-align: center;
+            font-size: 30;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white
+        }
+        p{    
+            text-align: center;
+            font-size: 25;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: aliceblue;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1> Usar o fetch para consumir a API e mostrar em um card HTML. &#x1F63B</h1>
+
+    <p>Precione Next para continuar</p>
+
+    <div class="container">
+        <img id="imagem" src="" alt="Imagem aleatória">
+        <br>
+        <button onclick="mostraimagem()">Next</button>
+    </div>
+
+    <script>
+        
+        function mostraimagem(){
+            fetch('https://api.thecatapi.com/v1/images/search?limit=10')
+                .then(response => response.json())
+                .then(data => {
+                    const imageUrl = data[0].url;
+                    document.getElementById('imagem').src = imageUrl;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar imagem:', error);
+                });
+        }
+    </script>
+</body>
+</html>
+
+
+
