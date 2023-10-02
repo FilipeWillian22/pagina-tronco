@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <style>
+        .flex-container {
+  display: flex;
+  align-items: stretch;
+}
+.flex-container > div {
+  background-color: #999;
+  color: white;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+ #button-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+ }
+ #button-container button {
+            border: 1px solid transparent;
+            border-radius: 5px;
+            height: 30px;
+            font-size: 20px;
+            width: 40px;
+            background-color: #0b49ce;
+            cursor: pointer;
+            align-items: center;
+
+ }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de cinema</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <div class="flex-container">
+      <div style="flex-grow: 8">TELA</div>
+    </div>
+    <h1>Escolha seus assentos</h1>
+    
+    <div id="button-container">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>10</button>
+        <button>11</button>
+        <button>12</button>
+        <button>13</button>
+        <button>14</button>
+        <button>15</button>
+        <button>16</button>
+        <button>17</button>
+        <button>18</button>
+        <button>19</button>
+        <button>20</button>
+        <button>Selecionar</button>
+
+    </div>
+
+<script>
+   $(document).ready(function(){
+  $(":button").click(function(){
+    $(this).css("background-color","red");
+  });
+});
+
+</script>
+
+
+
+    </body>
+    </html>
+<!--Exercícios
+1) criar uma pagina que represente uma sala de cinema. 
+O usuário deve informar quantas cadeiras deseja ter na sala. 
+Deve ser criada a quantidade de cadeiras informada, estilizadas na cor verde, 
+ou seja representando cadeiras disponíveis. Ao selecionar uma cadeira, mudar o estilo para vermelho. 
+Listar números de cadeiras disponíveis e números de cadeiras ocupadas.-->
