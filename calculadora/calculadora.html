@@ -4,63 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        body {
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #calc {
+            width: 400px;
+            background-color: #c4c4c4;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #calc h3 {
+            font-size: 18px;
+            font-weight: 300;
+            color: #666;
+        }
+        #display {
+            height: 60px;
+            font-size: 24px;
+            text-align: right;
+            border: none;
+            outline: none;
+        }
+        #button-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        #button-container button {
+            border: 1px solid transparent;
+            border-radius: 5px;
+            height: 50px;
+            font-size: 20px;
+            background-color: #dbdbdb;
+            cursor: pointer;
+        }
+        #button-container button:hover {
+            background-color: #bababa;
+            border-color: #999;
+        }
+        #equal-btn {
+            grid-column: span 2;
+            background-color: rgb(47, 17, 219);
+        }
+    </style>
 </head>
 <body>
-    <p>Calculadora virtual</p>
-    
-    <input type="text" id="display" readonly>
-    <br>
-    <!--Criar botões que ao clicar farão o numero aparecer no visor-->
-    <button onclick="adicionarAoDisplay('1')">1</button> 
-    <button onclick="adicionarAoDisplay('2')">2</button>
-    <button onclick="adicionarAoDisplay('3')">3</button>
-    <button onclick="adicionarAoDisplay('/')">/</button>
-    <button onclick="adicionarAoDisplay('+')">+</button>
-    <br>
-    <button onclick="adicionarAoDisplay('4')">4</button>
-    <button onclick="adicionarAoDisplay('5')">5</button>
-    <button onclick="adicionarAoDisplay('6')">6</button>
-    <button onclick="adicionarAoDisplay('-')">-</button>
-    <br>
-    <button onclick="adicionarAoDisplay('7')">7</button>
-    <button onclick="adicionarAoDisplay('8')">8</button>
-    <button onclick="adicionarAoDisplay('9')">9</button>
-    <button onclick="adicionarAoDisplay('*')">*</button>
-    <br>
-    <button onclick="adicionarAoDisplay('.')">,</button>
-    <button onclick="adicionarAoDisplay('0')">0</button>
-    <button onclick="limparDisplay('AC')">ac</button> <!--Criei umna fução para limpar o display quando acionado o botão-->
-    <button onclick="calcular('=')">=</button> <!--criei uma função para apresentar o resultado qunado acionado-->
+    <div id="calc">
+        <h3>Calculadora</h3>
+        <input type="text" id="display" readonly>
+        <div id="button-container"> <!--Coloquei em uma DIV para otimizar com o css-->
+            <!--Criei botões que ao clicar farão o numero aparecer no visor-->
+            <button onclick="limparDisplay()">AC</button> <!--Criei umna fução para limpar o display quando acionado o botão-->   
+            <button onclick="adicionarAoDisplay('1')">1</button>
+            <button onclick="adicionarAoDisplay('2')">2</button>
+            <button onclick="adicionarAoDisplay('+')">+</button>
+            <button onclick="adicionarAoDisplay('4')">4</button>
+            <button onclick="adicionarAoDisplay('5')">5</button>
+            <button onclick="adicionarAoDisplay('6')">6</button>
+            <button onclick="adicionarAoDisplay('-')">-</button>
+            <button onclick="adicionarAoDisplay('7')">7</button>
+            <button onclick="adicionarAoDisplay('8')">8</button>
+            <button onclick="adicionarAoDisplay('9')">9</button>
+            <button onclick="adicionarAoDisplay('*')">*</button>
+            <button onclick="adicionarAoDisplay('.')">.</button>
+            <button onclick="adicionarAoDisplay('0')">0</button>
+            <button id="equal-btn" onclick="calcular()">=</button> <!--criei uma função para apresentar o resultado qunado acionado-->
+        </div>
+    </div>
 
     <script>
-        //criei uma váriavel que chamei de termo
+         //criei uma váriavel que chamei de termo
         var termo = '';
         var display = document.getElementById("display");
 
-// criei uma function para fazer com que ao clicar em cada botão o valor acionado tenha efeito 
-        function adicionarAoDisplay(valor){
+        // criei uma function para fazer com que ao clicar em cada botão o valor acionado tenha efeito 
+        function adicionarAoDisplay(valor) {
             termo += valor;
             display.value = termo;
         }
 
-        function limparDisplay(){
+        function limparDisplay() {
             termo = ''; // Limpa o display
             display.value = termo;
         }
-//criado uma function especifica para o botão de igual, para apresentar o resultado 
 
-function calcular() {
-    resultado = ''; 
-    display.value = resultado;
-  
-    var soma = "" + "";
-  return sum;
-}
-
-var result = calcular();
-adicionarAoDisplay(resultado);
-
-
+        //criado uma function especifica para o botão de igual, para apresentar o resultado 
+        function calcular() {
+            try {
+                resultado = eval(termo);
+                termo = resultado.toString();
+                display.value = termo;
+            } catch (error) {
+                termo = '';
+                display.value = 'Erro';
+            }
+        }
     </script>
 </body>
 </html>
